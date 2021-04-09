@@ -21,3 +21,21 @@ class Graph:
             if x not in visited:
                 self._DFS_Rec(visited,x)
         return
+#iterative
+
+     def DFS_Iter(self,vertex):
+            visited = set()
+            stack = []
+            stack.append(vertex)
+            while stack:
+
+                first = stack.pop()
+
+                if first not in visited:
+                    visited.add(first)
+                    print(first)
+
+                for x in self.graph[first]:
+                    if x not in visited:
+                        stack.append(x)
+            return
